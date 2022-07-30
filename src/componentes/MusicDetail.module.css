@@ -1,0 +1,17 @@
+.divGeneral {
+    display: flex;
+    margin-left: 370px;
+    margin-top: 40px;
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+}
+
+.infoDetail {
+    width: 706px;
+    background: linear-gradient(0deg, rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7)), url(../images/foxbel-music@3x.png);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
