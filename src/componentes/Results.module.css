@@ -1,5 +1,7 @@
 .divGeneral {
     margin-left: 370px;
+    margin-right: 40px;
+    margin-bottom: 216px;
 }
 
 .title {
@@ -7,6 +9,14 @@
     color: #E86060;
     font-size: 22px;
     font-family: 'myFont2';
+}
+
+.cards {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 27px;
+    width: 170px;
 }
 
 @font-face {
