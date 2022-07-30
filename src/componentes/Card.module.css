@@ -1,0 +1,17 @@
+img {
+    width: 160px;
+    height: 160px;
+}
+
+h3 {
+    font-size: 14px;
+    font-family: 'myFont';
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+h4 {
+    font-size: 12px;
+    font-family: 'myFontUser';
+    margin-top: 7px;
+}
