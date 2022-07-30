@@ -1,0 +1,16 @@
+.divGeneral {
+    margin-left: 370px;
+}
+
+.title {
+    margin-top: 40px;
+    color: #E86060;
+    font-size: 22px;
+    font-family: 'myFont2';
+}
+
+@font-face {
+    font-family: 'myFont2';
+    src: url('../fontsType/Quicksand_Bold.otf');
+  }
+  
