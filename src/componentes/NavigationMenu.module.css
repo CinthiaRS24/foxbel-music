@@ -1,0 +1,64 @@
+ul {
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+li {
+    list-style: none;
+    margin-top: 8px;
+    text-align: start;
+    font-size: 16px;
+    font-family: 'myFontLight';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+p {
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-left: 40px;
+    text-align: start;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'myFont';
+}
+
+.logo {
+    height: 59px;
+    width: 250px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 50px;
+}
+
+.divGeneral {
+    background-color: #662323;
+    position: absolute;
+    width: 330px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+}
+
+.divLibreria {
+    margin-top: 30px;
+}
+
+.divPlaylist {
+    margin-top: 30px;
+}
+
+
+@font-face {
+    font-family: 'myFont';
+    src: url('../fontsType/Quicksand_Bold.otf');
+  }
+
+  @font-face {
+    font-family: 'myFontLight';
+    src: url('../fontsType/Quicksand_Light.otf');
+  }
+  
