@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export function getSongsRecent() {
+export function getSongs(params) {
     return function(dispatch) {
-        axios.get("https://api.deezer.com/radio/37151/tracks")
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/${params}`)
             .then(response => {
                 console.log('response', response)
                 return dispatch({
@@ -10,5 +10,14 @@ export function getSongsRecent() {
                     payload: response.data
                 })
             })
+    }
+}
+
+export function playTrack (track) {
+    return function(dispatch) {
+        return dispatch ({
+            type: 'PLAY_TRACK',
+            track
+        })
     }
 }
