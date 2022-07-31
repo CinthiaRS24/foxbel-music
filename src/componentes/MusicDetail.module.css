@@ -11,7 +11,67 @@
 
 .infoDetail {
     width: 706px;
-    background: linear-gradient(0deg, rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7)), url(../images/foxbel-music@3x.png);
+    background: linear-gradient(0deg, rgba(219, 115, 115, 0.7), rgba(240, 175, 175, 0.7)), url(../images/foxbel-music@3x.png);
     mix-blend-mode: normal;
-    opacity: 0.5;
+   
 }
+
+.artistName {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-left: 32px;
+    color: #FFFFFF;
+    font-family: 'myFontArtistDetail';
+}
+
+.info1 {
+    font-size: 14px;
+    margin-left: 32px;
+    color: #FFFFFF;
+    font-family: 'myFontDetailInfo';
+}
+
+.info2 {
+    font-size: 12px;
+    margin-left: 32px;
+    margin-right: 21px;
+    color: #FFFFFF;
+    font-family: 'myFontDetailInfo';
+}
+
+.divButtons {
+    display: flex;
+    margin-top: 64px;
+    margin-left: 32px;
+}
+
+.btn1 {
+    background-color: #E86060;
+    color: #FFFFFF;
+    border-radius: 100px;
+    padding: 8px;
+    width: 117px;
+    height: 31px;
+    padding: 0px;
+}
+
+.btn2 {
+    margin-left: 20px;
+    color: #EB5757;
+    border-radius: 100px;
+    padding: 8px;
+    border: 1px solid #EB5757;
+    width: 117px;
+    height: 31px;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: 'myFontArtistDetail';
+    src: url('../fontsType/Quicksand_Book.otf');
+}
+
+@font-face {
+    font-family: 'myFontDetailInfo';
+    src: url('../fontsType/Quicksand_Light.otf');
+  }
