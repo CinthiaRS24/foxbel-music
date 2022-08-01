@@ -8,19 +8,18 @@ export default function NavigationMenu () {
 
     const dispatch = useDispatch();
     const results = useSelector(state => state.results);
-    console.log('results', results)
 
     function handlerSongs(e, params) {
         if (e) {
             e.preventDefault();
         }
         dispatch(getSongs(params));
-        console.log('e', e)
     }
 
     useEffect(() => {
+        console.log('NavigationMenu useEffect');
         handlerSongs(null, 'radio/37151/tracks')
-    }, [])
+    }, []);
 
     return (
         <div className={s.divGeneral}>

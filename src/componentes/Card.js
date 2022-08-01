@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import imgDefault from '../images/imgDefault.jpg'
-import {playTrack} from '../redux/actions'
+import { playTrack } from '../redux/actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,8 +10,12 @@ export default function Card ({img, title, artist, url}) {
 
     const dispatch = useDispatch();
 
-    const handlerPlay = (url) =>  {
-        dispatch(playTrack(url))
+    const handlerPlay = (cardInfo) =>  {
+        console.log('handlerPlay');
+        dispatch ({
+            type: 'PLAY_TRACK',
+            track: cardInfo
+        });
     }
 
     return (

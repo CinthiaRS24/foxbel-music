@@ -10,27 +10,30 @@ export default function Footer () {
     const play = useSelector(state => state.play);
 
     const [volumeValue, setVolumeValue] = useState(1)
-    const [duration, setDuration] = useState(null)
     const [trackAudio, setTrackAudio] = useState(null)
-    const [time, setTime] = useState(0)
-    const [playTime, setPlayTime] = useState(false)
+   // const [duration, setDuration] = useState(null)
+
+
+      
+    useEffect(() => {
+        console.log('useEffect', trackSelected, trackAudio);
+        if (trackAudio) {
+            trackAudio.currentTime = 0
+            trackAudio.volume = volumeValue / 10
+            if (play) {
+                trackAudio.play();
+            }
+        }
+      }, [trackAudio])
+
 
     const updateVolume = (e) => {
         setVolumeValue(e.target.value)
         trackAudio.volume = e.target.value / 10
     }
-  
-    useEffect(() => {
-        if (trackAudio) {
-            trackAudio.currentTime = 0
-            trackAudio.volume = volumeValue / 10
-            if (play) {
-                trackAudio.play()
-            }
-        }
-      }, [trackSelected])
 
-    console.log('trackSelected', trackSelected)
+
+
     if (!trackSelected.url) {
        return null; 
     }

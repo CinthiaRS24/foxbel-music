@@ -5,7 +5,6 @@ import s from './Results.module.css'
 
 export default function Results () {
     const resultados = useSelector(state => state.results.data);
-    let img = {imgDefault}
 
     return (
         <div className={s.divGeneral}>
@@ -13,9 +12,14 @@ export default function Results () {
 
             <div className={s.cards} >
                 {resultados?.map(card => {
-                    {card.album? img = card.album.cover: img = imgDefault}
                     return (
-                        <Card img={img} title={card.title} artist={card.artist.name} url={card.preview} key={card.id}/>
+                        <Card 
+                            img={card.album ? card.album.cover : imgDefault} 
+                            title={card.title} 
+                            artist={card.artist.name} 
+                            url={card.preview} 
+                            key={card.id}
+                        />
                 )}
                 )}
             </div>
