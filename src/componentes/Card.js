@@ -17,8 +17,8 @@ export default function Card ({img, title, artist, url}) {
     return (
         <div className="card">
             <div className={s.figure}>
-            <img className="card-img-top" src={img? img : imgDefault} alt="Card image cap" onClick={() => handlerPlay({img, title, artist, url})}/>
-            <FontAwesomeIcon icon={faPlay} color='white' className={s.iconPlay} />
+            <img className="card-img-top" src={img? img : imgDefault} alt="Card image cap"/>
+            <FontAwesomeIcon icon={faPlay} color='white' onClick={() => handlerPlay({img, title, artist, url})} className={s.iconPlay} />
             <div  className={s.iconPoints}>
             <FontAwesomeIcon icon={faEllipsisV} color='white'  />
             </div>
