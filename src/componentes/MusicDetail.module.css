@@ -9,6 +9,15 @@
     height: 250px;
 }
 
+.iconPlay svg {
+    position: absolute;
+    inset: 0px;
+    left: 463px;
+    top: 195px;
+    width: 63px;
+    height: 72px;
+}
+
 .infoDetail {
     width: 706px;
     background: linear-gradient(0deg, rgba(219, 115, 115, 0.7), rgba(240, 175, 175, 0.7)), url(../images/foxbel-music@3x.png);
