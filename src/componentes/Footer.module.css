@@ -50,6 +50,7 @@
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
 }
 
 .buttons {
@@ -77,6 +78,7 @@
 input[type="range" i] {
     color: -internal-light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
     padding: initial;
+    margin-right: 5px;
 }
 
 button {
@@ -86,6 +88,11 @@ button {
     font: inherit;
     line-height: normal;
     overflow: visible;
+  }
+
+  .volumeBtn svg {
+    width: 50px;
+    height: 40px;
   }
 
 @font-face {

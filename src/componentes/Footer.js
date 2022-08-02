@@ -1,42 +1,45 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faPause, faEllipsisV, faBackwardStep, faForwardStep, faVolumeOff } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faPause, faBackwardStep, faForwardStep, faVolumeOff, faVolumeXmark } from '@fortawesome/free-solid-svg-icons'
 import s from './Footer.module.css'
 
 export default function Footer () {
 
     const trackSelected = useSelector(state => state.track);
     const play = useSelector(state => state.play);
+    const [showBtn, setShowBtn] = useState(null)
 
     const [volumeValue, setVolumeValue] = useState(1)
-    const [trackAudio, setTrackAudio] = useState(null)
-   // const [duration, setDuration] = useState(null)
+    const trackAudio = useRef(null)
 
 
-      
     useEffect(() => {
-        console.log('useEffect', trackSelected, trackAudio);
-        if (trackAudio) {
-            trackAudio.currentTime = 0
-            trackAudio.volume = volumeValue / 10
-            if (play) {
-                trackAudio.play();
-            }
+            
+        if (play) {
+            setShowBtn(true)
+            trackAudio.current.currentTime = 0
+            trackAudio.current.volume = volumeValue / 10
+            trackAudio.current.play();            
         }
-      }, [trackAudio])
+    }, [trackSelected])
 
 
     const updateVolume = (e) => {
         setVolumeValue(e.target.value)
-        trackAudio.volume = e.target.value / 10
+        trackAudio.current.volume = e.target.value / 10
+        console.log(trackAudio.current.volume)
     }
 
 
+
+
+    
 
     if (!trackSelected.url) {
        return null; 
     }
+
     return(
         <div className={s.divGeneral}>
             
@@ -48,7 +51,7 @@ export default function Footer () {
                 </div>
             </div>
 
-            <audio ref={(audio) => {setTrackAudio(audio)}} src={trackSelected.url} />
+            <audio ref={trackAudio} src={trackSelected.url} />
 
                 <div className={s.divIcons}>
                     <button>
@@ -56,12 +59,20 @@ export default function Footer () {
                     </button>
 
                     {
-                        play? 
-                            <button>    
+                        showBtn && showBtn === true? 
+                            <button onClick={() => {
+                                    trackAudio.current.pause()
+                                    setShowBtn(false)
+                                }}
+                            >    
                                 <FontAwesomeIcon icon={faPause} color='white' className={s.buttons} />
                             </button>
                         :
-                            <button>    
+                            <button onClick={() => {
+                                    trackAudio.current.play()
+                                    setShowBtn(true)
+                                }}
+                            >    
                                 <FontAwesomeIcon icon={faPlay} color='white' className={s.buttons} />
                             </button>
                     }
@@ -74,7 +85,19 @@ export default function Footer () {
                 
             <div className={s.volume}>
                 <input className={s.volumeRange} value={volumeValue} onChange={(e) => updateVolume(e)} type='range' min='0' max='10' />
-                <FontAwesomeIcon icon={faVolumeOff} color='white' size="3x" />
+                {
+                    volumeValue === "0"?
+                        <button className={s.volumeBtn}>
+                            <FontAwesomeIcon icon={faVolumeXmark} color='white' />
+                        </button>
+                    :
+                        <button className={s.volumeBtn}>
+                            <FontAwesomeIcon icon={faVolumeOff} color='white' />
+                        </button>
+                    
+                }
+                
+                
             </div>
             
         </div>
