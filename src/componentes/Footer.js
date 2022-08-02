@@ -28,9 +28,17 @@ export default function Footer () {
     const updateVolume = (e) => {
         setVolumeValue(e.target.value)
         trackAudio.current.volume = e.target.value / 10
-        console.log(trackAudio.current.volume)
     }
 
+    const mute = () => {
+        if (volumeValue === "0") {
+            setVolumeValue("5")
+            trackAudio.current.volume = 5 / 10
+        } else {
+            setVolumeValue("0")
+            trackAudio.current.volume = 0 / 10
+        }
+    }
 
 
 
@@ -87,19 +95,15 @@ export default function Footer () {
                 <input className={s.volumeRange} value={volumeValue} onChange={(e) => updateVolume(e)} type='range' min='0' max='10' />
                 {
                     volumeValue === "0"?
-                        <button className={s.volumeBtn}>
+                        <button className={s.volumeBtn} onClick={() => mute()}>
                             <FontAwesomeIcon icon={faVolumeXmark} color='white' />
                         </button>
                     :
-                        <button className={s.volumeBtn}>
+                        <button className={s.volumeBtn} onClick={() => mute()}>
                             <FontAwesomeIcon icon={faVolumeOff} color='white' />
                         </button>
-                    
                 }
-                
-                
-            </div>
-            
+            </div>   
         </div>
     )
 }

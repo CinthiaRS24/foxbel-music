@@ -95,6 +95,11 @@ button {
     height: 40px;
   }
 
+  .volumeBtn {
+    cursor: pointer;
+  }
+
+
 @font-face {
     font-family: 'myFontTitle';
     src: url('../fontsType/Quicksand_Book.otf');
