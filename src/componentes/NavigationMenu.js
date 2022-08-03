@@ -17,7 +17,6 @@ export default function NavigationMenu () {
     }
 
     useEffect(() => {
-        console.log('NavigationMenu useEffect');
         handlerSongs(null, 'radio/37151/tracks')
     }, []);
 
@@ -37,7 +36,7 @@ export default function NavigationMenu () {
                         <a className="nav-link" href="#">Albums</a>
                     </li>
                     <li className="nav-item" onClick={(e) => handlerSongs(e, 'chart/0/tracks')}>
-                        <a className="nav-link" href="#">canciones</a>
+                        <a className="nav-link" href="#">Canciones</a>
                     </li>
                     <li className="nav-item" onClick={(e) => handlerSongs(e, 'radio/31061/tracks')}>
                         <a className="nav-link" href="#">Estaciones</a>
