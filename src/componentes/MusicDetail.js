@@ -30,7 +30,7 @@ export default function MusicDetail () {
             <div className={s.infoDetail}>
                 <h3 className={s.artistName}>{trackSelected.artist? trackSelected.artist : artistDefault}</h3>
                 <h3 className={s.info1}>{trackSelected.artist? `Lo mejor de ${trackSelected.artist}` : null}</h3>
-                <h3 className={s.info2}>{trackSelected.artist? `${trackSelected.artist} (Tottenham, Londres, Inglaterra, 5 de mayo de 1988), conocida simplemente como Adele, es una cantante, compositora y multinstrumentista británica.` : null}</h3>
+                <h3 className={s.info2}>{trackSelected.artist? `${trackSelected.artist} (Tottenham, Londres, Inglaterra, 5 de mayo de 1988), conocida simplemente como ${trackSelected.artist}, es una cantante, compositora y multinstrumentista británica.` : null}</h3>
                 {
                     trackSelected.artist? 
                         <div className={s.divButtons}>

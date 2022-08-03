@@ -20,7 +20,7 @@
 
 .infoDetail {
     width: 706px;
-    background: linear-gradient(0deg, rgba(219, 115, 115, 0.7), rgba(240, 175, 175, 0.7)), url(../images/foxbel-music@3x.png);
+    background: linear-gradient(0deg, rgba(192, 96, 96, 0.7), rgba(189, 122, 122, 0.7)), url(../images/foxbel-music@3x.png);
     mix-blend-mode: normal;
    
 }
@@ -48,6 +48,7 @@
     font-family: 'myFontDetailInfo';
 }
 
+
 .divButtons {
     display: flex;
     margin-top: 64px;
@@ -59,20 +60,27 @@
     color: #FFFFFF;
     border-radius: 100px;
     padding: 8px;
-    width: 117px;
+    width: 122px;
     height: 31px;
     padding: 0px;
 }
 
 .btn2 {
     margin-left: 20px;
-    color: #EB5757;
+    color: #9e2b2b;
     border-radius: 100px;
     padding: 8px;
-    border: 1px solid #EB5757;
-    width: 117px;
+    border: 1px solid #9e2b2b;
+    width: 122px;
     height: 31px;
     padding: 0px;
+}
+
+
+.btn2:hover {
+    background-color: #E86060;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
 }
 
 @font-face {
