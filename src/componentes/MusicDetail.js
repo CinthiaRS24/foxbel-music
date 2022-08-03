@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import imgDefault from '../images/imgDefault.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faPause, faPlay, faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import s from './MusicDetail.module.css'
 
 export default function MusicDetail () {
@@ -48,6 +48,7 @@ export default function MusicDetail () {
                                     <button className={s.btn1}>Pausado</button>
                             }
                             <button className={s.btn2}>Seguir</button>
+                            <FontAwesomeIcon icon={faEllipsisH} className={s.threePoints} color='white' />
                         </div>               
                     </div>
                 : 
