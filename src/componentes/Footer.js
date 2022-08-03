@@ -88,7 +88,7 @@ export default function Footer () {
                     
 
                     <button>
-                    <FontAwesomeIcon icon={faForwardStep} color='white' className={s.buttons} />
+                        <FontAwesomeIcon icon={faForwardStep} color='white' className={s.buttons} />
                     </button>
                 </div>
                 
