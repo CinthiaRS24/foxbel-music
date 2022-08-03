@@ -34,7 +34,12 @@ export default function MusicDetail () {
                 {
                     trackSelected.artist? 
                         <div className={s.divButtons}>
-                            <button className={s.btn1}>Reproducir</button>
+                            {
+                                play?
+                                    <button className={s.btn1}>Reproduciendo</button>
+                                :
+                                    <button className={s.btn1}>Pausado</button>
+                            }
                             <button className={s.btn2}>Seguir</button>
                         </div>
                     :
