@@ -4,7 +4,7 @@ import Card from './Card'
 import s from './Results.module.css'
 
 export default function Results () {
-    const resultados = useSelector(state => state.results.data);
+    const resultados = useSelector(state => state.results);
 
     return (
         <div className={s.divGeneral}>
@@ -19,6 +19,7 @@ export default function Results () {
                             artist={card.artist.name} 
                             url={card.preview} 
                             key={card.id}
+                            index={resultados.indexOf(card)} 
                         />
                 )}
                 )}

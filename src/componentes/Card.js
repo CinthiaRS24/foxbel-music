@@ -6,7 +6,7 @@ import { faPlay, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
 
 import s from './Card.module.css'
 
-export default function Card ({img, title, artist, url}) {
+export default function Card ({img, title, artist, url, index}) {
 
     const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ export default function Card ({img, title, artist, url}) {
         <div className="card">
             <div className={s.figure}>
                 <img className="card-img-top" src={img? img : imgDefault} alt="Card image cap"/>
-                <FontAwesomeIcon icon={faPlay} color='white' onClick={() => handlerPlay({img, title, artist, url})} className={s.iconPlay} />
+                <FontAwesomeIcon icon={faPlay} color='white' onClick={() => handlerPlay({img, title, artist, url, index})} className={s.iconPlay} />
                 <div  className={s.iconPoints}>
                     <FontAwesomeIcon icon={faEllipsisVertical} color='white'  />
                 </div>

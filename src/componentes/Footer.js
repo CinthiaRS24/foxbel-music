@@ -9,6 +9,7 @@ export default function Footer () {
     const dispatch = useDispatch();
 
     const trackSelected = useSelector(state => state.track);
+    const indexTrackSelected = trackSelected.index
     const play = useSelector(state => state.play);
 
     const [volumeValue, setVolumeValue] = useState(1)
@@ -59,7 +60,14 @@ export default function Footer () {
             <audio ref={trackAudio} src={trackSelected.url} />
 
                 <div className={s.divIcons}>
-                    <button>
+                    <button
+                        onClick={() => {
+                            dispatch ({
+                                type: 'PREVIOUS_TRACK',
+                                index: indexTrackSelected
+                            });
+                        }}
+                    >
                         <FontAwesomeIcon icon={faBackwardStep} className={s.buttons} color='white'  />
                     </button>
 
@@ -87,7 +95,14 @@ export default function Footer () {
                     }
                     
 
-                    <button>
+                    <button
+                    onClick={() => {
+                        dispatch ({
+                            type: 'NEXT_TRACK',
+                            index: indexTrackSelected
+                        });
+                    }}
+                    >
                         <FontAwesomeIcon icon={faForwardStep} color='white' className={s.buttons} />
                     </button>
                 </div>
