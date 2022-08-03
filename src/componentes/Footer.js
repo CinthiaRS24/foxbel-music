@@ -1,23 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faBackwardStep, faForwardStep, faVolumeOff, faVolumeXmark } from '@fortawesome/free-solid-svg-icons'
 import s from './Footer.module.css'
 
 export default function Footer () {
 
+    const dispatch = useDispatch();
+
     const trackSelected = useSelector(state => state.track);
     const play = useSelector(state => state.play);
-    const [showBtn, setShowBtn] = useState(null)
 
     const [volumeValue, setVolumeValue] = useState(1)
     const trackAudio = useRef(null)
 
 
     useEffect(() => {
-            
         if (play) {
-            setShowBtn(true)
             trackAudio.current.currentTime = 0
             trackAudio.current.volume = volumeValue / 10
             trackAudio.current.play();            
@@ -39,8 +38,6 @@ export default function Footer () {
             trackAudio.current.volume = 0 / 10
         }
     }
-
-
 
     
 
@@ -67,18 +64,22 @@ export default function Footer () {
                     </button>
 
                     {
-                        showBtn && showBtn === true? 
+                        play? 
                             <button onClick={() => {
+                                    dispatch ({
+                                        type: 'PAUSE_TRACK',
+                                    });
                                     trackAudio.current.pause()
-                                    setShowBtn(false)
                                 }}
                             >    
                                 <FontAwesomeIcon icon={faPause} color='white' className={s.buttons} />
                             </button>
                         :
                             <button onClick={() => {
+                                    dispatch ({
+                                        type: 'RESUME_TRACK',
+                                    });
                                     trackAudio.current.play()
-                                    setShowBtn(true)
                                 }}
                             >    
                                 <FontAwesomeIcon icon={faPlay} color='white' className={s.buttons} />
