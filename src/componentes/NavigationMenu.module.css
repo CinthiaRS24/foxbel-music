@@ -1,6 +1,7 @@
 ul {
     margin-top: 4px;
     margin-bottom: 0px;
+    padding-left: 0px;
 }
 
 li {
@@ -11,9 +12,23 @@ li {
     font-family: 'myFontLight';
 }
 
+.selected {
+    border-left: 5px solid #E86060;
+}
+
+.selected a {
+    color: #E86060;
+    margin-left: 35px;
+}
+
+a:hover {
+    color: #E86060;
+}
+
 a {
     text-decoration: none;
     color: white;
+    margin-left: 40px;
 }
 
 p {
