@@ -25,6 +25,12 @@ export default function Footer () {
     }, [trackSelected])
 
 
+    function handleEnded () {
+        dispatch ({
+            type: 'PAUSE_TRACK',
+        });
+    }
+
     const updateVolume = (e) => {
         setVolumeValue(e.target.value)
         trackAudio.current.volume = e.target.value / 10
@@ -57,7 +63,7 @@ export default function Footer () {
                 </div>
             </div>
 
-            <audio ref={trackAudio} src={trackSelected.url} />
+            <audio ref={trackAudio} onEnded={handleEnded} src={trackSelected.url} />
 
                 <div className={s.divIcons}>
                     <button
