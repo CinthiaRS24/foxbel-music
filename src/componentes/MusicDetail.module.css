@@ -21,8 +21,6 @@
 .infoDetail {
     width: 706px;
     background: linear-gradient(0deg, rgba(192, 96, 96, 0.7), rgba(189, 122, 122, 0.7)), url(../images/foxbel-music@3x.png);
-    mix-blend-mode: normal;
-   
 }
 
 .artistName {
@@ -46,6 +44,7 @@
     margin-right: 21px;
     color: #FFFFFF;
     font-family: 'myFontDetailInfo';
+    margin-top: 20px;
 }
 
 
@@ -81,6 +80,18 @@
     background-color: #E86060;
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
+}
+
+.secondP {
+    display: flex;
+    align-items: center;
+}
+
+.subInfo1 {
+    color: #662323;
+    font-size: 10px;
+    margin-left: 16px;
+    font-family: 'myFontArtistDetail';
 }
 
 @font-face {

@@ -26,13 +26,20 @@ export default function MusicDetail () {
                 :
                     null
             }
-    
-            <div className={s.infoDetail}>
-                <h3 className={s.artistName}>{trackSelected.artist? trackSelected.artist : artistDefault}</h3>
-                <h3 className={s.info1}>{trackSelected.artist? `Lo mejor de ${trackSelected.artist}` : null}</h3>
-                <h3 className={s.info2}>{trackSelected.artist? `${trackSelected.artist} (Tottenham, Londres, Inglaterra, 5 de mayo de 1988), conocida simplemente como ${trackSelected.artist}, es una cantante, compositora y multinstrumentista británica.` : null}</h3>
-                {
-                    trackSelected.artist? 
+
+            {
+                trackSelected.artist?
+                    <div className={s.infoDetail}>
+                        <h3 className={s.artistName}>{trackSelected.artist}</h3>
+                        
+                        <div className={s.secondP}>
+                            <h3 className={s.info1}>{`Lo mejor de ${trackSelected.artist}`}</h3>
+                            <h3 className={s.subInfo1}>321, 123 seguidores</h3>
+                        </div>
+                        
+                        
+                        <h3 className={s.info2}>{`${trackSelected.artist} (Tottenham, Londres, Inglaterra, 5 de mayo de 1988), conocida simplemente como ${trackSelected.artist}, es una cantante, compositora y multinstrumentista británica.`}</h3>
+               
                         <div className={s.divButtons}>
                             {
                                 play?
@@ -41,12 +48,14 @@ export default function MusicDetail () {
                                     <button className={s.btn1}>Pausado</button>
                             }
                             <button className={s.btn2}>Seguir</button>
-                        </div>
-                    :
-                        null
-                }
-                
-            </div>
+                        </div>               
+                    </div>
+                : 
+                <div className={s.infoDetail}>
+                    <h3 className={s.artistName}>{artistDefault}</h3>
+                </div>
+            }
+            
         </div>
     )
 }
