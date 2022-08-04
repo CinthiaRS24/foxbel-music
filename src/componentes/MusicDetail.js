@@ -18,9 +18,9 @@ export default function MusicDetail () {
                     <div className={s.iconPlay}>
                         {
                             play?
-                                <FontAwesomeIcon icon={faPause} color='white' className={s.buttons} />
+                                <FontAwesomeIcon icon={faPause} color='white' />
                             :
-                                <FontAwesomeIcon icon={faPlay} color='white' className={s.iconPlay} />
+                                <FontAwesomeIcon icon={faPlay} color='white' />
                         }  
                     </div> 
                 :
@@ -52,11 +52,10 @@ export default function MusicDetail () {
                         </div>               
                     </div>
                 : 
-                <div className={s.infoDetail}>
-                    <h3 className={s.artistName}>{artistDefault}</h3>
-                </div>
-            }
-            
+                    <div className={s.infoDetail}>
+                        <h3 className={s.artistName}>{artistDefault}</h3>
+                    </div>
+            }            
         </div>
     )
 }
