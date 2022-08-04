@@ -1,3 +1,36 @@
+.divGeneral {
+    background-color: #662323;
+    position: fixed;
+    width: 330px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+}
+
+.logo {
+    height: 59px;
+    width: 250px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 50px;
+}
+
+
+
+.divLibreria {
+    margin-top: 30px;
+}
+
+p {
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-left: 40px;
+    text-align: start;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'myFont';
+}
+
 ul {
     margin-top: 4px;
     margin-bottom: 0px;
@@ -12,6 +45,16 @@ li {
     font-family: 'myFontLight';
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+}
+
+a:hover {
+    color: #E86060;
+}
+
 .selected {
     border-left: 5px solid #E86060;
 }
@@ -21,50 +64,10 @@ li {
     margin-left: 35px;
 }
 
-a:hover {
-    color: #E86060;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-    margin-left: 40px;
-}
-
-p {
-    color: #FFFFFF;
-    font-size: 22px;
-    margin-left: 40px;
-    text-align: start;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-family: 'myFont';
-}
-
-.logo {
-    height: 59px;
-    width: 250px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 50px;
-}
-
-.divGeneral {
-    background-color: #662323;
-    position: fixed;
-    width: 330px;
-    height: 100vh;
-    left: 0px;
-    top: 0px;
-}
-
-.divLibreria {
-    margin-top: 30px;
-}
-
 .divPlaylist {
     margin-top: 30px;
 }
+
 
 
 @font-face {
