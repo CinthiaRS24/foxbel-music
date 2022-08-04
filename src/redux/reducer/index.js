@@ -14,35 +14,35 @@ function rootReducer (state = initialState, action) {
             }
 
         case 'PLAY_TRACK':
-            console.log('PLAY_TRACK');
             return {
                 ...state,
                 track: action.track,
                 play: true,
-        }
+            }
 
         case 'PAUSE_TRACK':
             return {
-              ...state,
-              play: false,
+                ...state,
+                play: false,
             }
 
         case 'RESUME_TRACK':
             return {
-              ...state,
-              play: true,
+                ...state,
+                play: true,
             }
 
         case 'NEXT_TRACK':
             return {
                 ...state,
                 track: nextOrPreviou(state.results, action.index, true),
-        }
+            }
+
         case 'PREVIOUS_TRACK':
             return {
                 ...state,
                 track: nextOrPreviou(state.results, action.index, false),
-        }
+            }
           
         default:
             return state;
@@ -74,4 +74,4 @@ const nextOrPreviou = (results, index, next) => {
         url: results[newIndex].preview,
         index: newIndex
     }
-  }
+}
