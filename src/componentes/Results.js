@@ -11,20 +11,21 @@ export default function Results () {
             <h1 className={s.title}>Resultados</h1>
 
             <div className={s.cards} >
-                {resultados?.map(card => {
-                    return (
-                        <Card 
-                            img={card.album ? card.album.cover : imgDefault} 
-                            title={card.title} 
-                            artist={card.artist.name} 
-                            url={card.preview} 
-                            key={card.id}
-                            index={resultados.indexOf(card)} 
-                        />
-                )}
-                )}
-            </div>
-            
+                {
+                    resultados?.map(card => {
+                        return (
+                            <Card 
+                                img={card.album ? card.album.cover : imgDefault} 
+                                title={card.title} 
+                                artist={card.artist.name} 
+                                url={card.preview} 
+                                key={card.id}
+                                index={resultados.indexOf(card)} 
+                            />
+                        )
+                    })
+                }
+            </div>            
         </div>
     )
 }
