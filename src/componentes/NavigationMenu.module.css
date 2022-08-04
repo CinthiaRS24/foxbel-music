@@ -73,10 +73,10 @@ a:hover {
 @font-face {
     font-family: 'myFont';
     src: url('../fontsType/Quicksand_Bold.otf');
-  }
+}
 
   @font-face {
     font-family: 'myFontLight';
     src: url('../fontsType/Quicksand_Light.otf');
-  }
+}
   
