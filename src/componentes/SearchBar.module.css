@@ -1,9 +1,9 @@
-.divGeneral {
-    display: flex;
-}
-
 div {
     text-align: start;
+}
+
+.divGeneral {
+    display: flex;
 }
 
 input {
@@ -48,10 +48,12 @@ input::placeholder {
     color: #4F4F4F;
 }
 
+
+
 @font-face {
     font-family: 'myFontUser';
     src: url('../fontsType/Quicksand_Book.otf');
-  }
+}
 
 
 
