@@ -25,7 +25,7 @@ export default function Footer () {
     }, [trackSelected])
 
 
-    function handleEnded () {
+    const handleEnded = () => {
         dispatch ({
             type: 'PAUSE_TRACK',
         });
@@ -65,63 +65,74 @@ export default function Footer () {
 
             <audio ref={trackAudio} onEnded={handleEnded} src={trackSelected.url} />
 
-                <div className={s.divIcons}>
-                    <button
-                        onClick={() => {
-                            dispatch ({
-                                type: 'PREVIOUS_TRACK',
-                                index: indexTrackSelected
-                            });
-                        }}
-                    >
-                        <FontAwesomeIcon icon={faBackwardStep} className={s.buttons} color='white'  />
-                    </button>
+            <div className={s.divIcons}>
+                <button
+                    onClick={() => {
+                        dispatch ({
+                            type: 'PREVIOUS_TRACK',
+                            index: indexTrackSelected
+                        });
+                    }}
+                >
+                    <FontAwesomeIcon icon={faBackwardStep} className={s.buttons} color='white'  />
+                </button>
 
-                    {
-                        play? 
-                            <button onClick={() => {
-                                    dispatch ({
-                                        type: 'PAUSE_TRACK',
-                                    });
-                                    trackAudio.current.pause()
-                                }}
-                            >    
-                                <FontAwesomeIcon icon={faPause} color='white' className={s.buttons} />
-                            </button>
-                        :
-                            <button onClick={() => {
-                                    dispatch ({
-                                        type: 'RESUME_TRACK',
-                                    });
-                                    trackAudio.current.play()
-                                }}
-                            >    
-                                <FontAwesomeIcon icon={faPlay} color='white' className={s.buttons} />
-                            </button>
-                    }
-                    
+                {
+                    play? 
+                        <button 
+                            onClick={() => {
+                                dispatch ({
+                                    type: 'PAUSE_TRACK',
+                                });
+                                trackAudio.current.pause()
+                            }}
+                        >    
+                            <FontAwesomeIcon icon={faPause} color='white' className={s.buttons} />
+                        </button>
+                    :
+                        <button 
+                            onClick={() => {
+                                dispatch ({
+                                    type: 'RESUME_TRACK',
+                                });
+                                trackAudio.current.play()
+                            }}
+                        >    
+                            <FontAwesomeIcon icon={faPlay} color='white' className={s.buttons} />
+                        </button>
+                }
 
-                    <button
+                <button
                     onClick={() => {
                         dispatch ({
                             type: 'NEXT_TRACK',
                             index: indexTrackSelected
                         });
                     }}
-                    >
-                        <FontAwesomeIcon icon={faForwardStep} color='white' className={s.buttons} />
-                    </button>
-                </div>
+                >
+                    <FontAwesomeIcon icon={faForwardStep} color='white' className={s.buttons} />
+                </button>
+            </div>
                 
             <div className={s.volume}>
-                <input className={s.volumeRange} value={volumeValue} onChange={(e) => updateVolume(e)} type='range' min='0' max='10' />
+                <input 
+                    className={s.volumeRange} 
+                    value={volumeValue} 
+                    onChange={(e) => updateVolume(e)} type='range' min='0' max='10' 
+                />
                 {
                     volumeValue === "0"?
-                        <button className={s.volumeBtn} onClick={() => mute()}>
+                        <button 
+                            className={s.volumeBtn} 
+                            onClick={() => mute()}
+                        >
                             <FontAwesomeIcon icon={faVolumeXmark} color='white' />
                         </button>
                     :
-                        <button className={s.volumeBtn} onClick={() => mute()}>
+                        <button 
+                            className={s.volumeBtn} 
+                            onClick={() => mute()}
+                        >
                             <FontAwesomeIcon icon={faVolumeOff} color='white' />
                         </button>
                 }

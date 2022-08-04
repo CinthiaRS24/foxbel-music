@@ -10,13 +10,13 @@
     justify-content: space-between;
 }
 
+.divInfo {
+    display: flex;
+}
+
 .imgFooter {
     width: 100px;
     height: 100px;
-}
-
-.divInfo {
-    display: flex;
 }
 
 .divText {
@@ -38,6 +38,8 @@
     font-family: 'myFontArtist';
 }
 
+
+
 .divIcons {
     align-items: center;
     margin-top: auto;
@@ -45,12 +47,13 @@
     justify-content: center;
 }
 
-.volume {
-    margin-right: 22px;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
 }
 
 .buttons {
@@ -65,6 +68,15 @@
     background-color: rgba(235, 131, 131, 0.9);
 }
 
+
+
+.volume {
+    margin-right: 22px;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+}
 
 .volumeRange {
     width: auto;
@@ -82,34 +94,25 @@ input[type="range" i] {
     margin-right: 5px;
 }
 
-button {
-    background: none;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-  }
-
-  .volumeBtn svg {
+.volumeBtn svg {
     width: 50px;
     height: 40px;
     cursor: pointer;
-  }
+}
 
-  .volumeBtn svg:hover {
+.volumeBtn svg:hover {
     width: 50px;
     height: 40px;
     border-radius:50%;
     background-color: rgba(235, 131, 131, 0.9);
-  }
+}
 
 
 
 @font-face {
     font-family: 'myFontTitle';
     src: url('../fontsType/Quicksand_Book.otf');
-  }
+}
 
 @font-face {
     font-family: 'myFontArtist';
